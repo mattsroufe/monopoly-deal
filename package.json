@@ -1,0 +1,19 @@
+{
+  "name": "monopoly-deal",
+  "version": "0.0.1",
+  "description": "A web-based monopoly deal clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattsroufe/monopoly-deal.git"
+  },
+  "author": "Matt Sroufe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattsroufe/monopoly-deal/issues"
+  },
+  "homepage": "https://github.com/mattsroufe/monopoly-deal#readme"
+}
