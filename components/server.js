@@ -9,8 +9,8 @@ const ServerApp = ({players}) => (
     {console.log(players)}
     <h1>Server App</h1>
     <ul>
-      {Object.keys(players).map((player) =>
-        <li key={player}>{player}</li>
+      {Object.keys(players).map((key) =>
+        <li key={key}>{players[key].name}</li>
       )}
     </ul>
   </div>

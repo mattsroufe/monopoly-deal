@@ -1,6 +1,9 @@
 import {List, Map} from 'immutable'
 
-const initialState = Map({players: Map()})
+const initialState = Map({
+  started: false,
+  players: Map()
+})
 
 const monopolyDeal = (state = initialState, action) => {
   switch (action.type) {
@@ -8,6 +11,8 @@ const monopolyDeal = (state = initialState, action) => {
       return state.updateIn(['players', action.clientId], value => Map())
     case 'SET_PLAYER_NAME':
       return state.updateIn(['players', action.clientId], value => Map({name: action.value}))
+    case 'START_GAME':
+      return state.set('started', true)
     default:
       return state
   }

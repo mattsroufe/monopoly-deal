@@ -19,7 +19,13 @@ const submitName = (e) => {
   e.preventDefault();
 }
 
-const ClientApp = ({players}) => (
+const startGame = () => {
+  socket.emit('action', {
+    type: 'START_GAME'
+  });
+}
+
+const ClientApp = ({started, players}) => (
   <div>
     {console.log(players)}
     <h1>Client App</h1>
@@ -33,6 +39,9 @@ const ClientApp = ({players}) => (
         <input onClick={submitName} type="submit" value="Submit" />
       </div>
     )}
+    {Object.keys(players).length > 1 && !started &&
+      <button onClick={startGame}>Start Game</button>
+    }
   </div>
 )
 
