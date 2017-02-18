@@ -16,8 +16,8 @@ io.on('connection', function (socket) {
       type: 'ADD_PLAYER',
       clientId: socket.client.conn.id
     });
-    io.emit('data', store.getState().toJS());
   }
+  io.emit('data', store.getState().toJS());
 });
 
 http.listen(3000, function() {
