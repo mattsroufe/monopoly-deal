@@ -1,4 +1,7 @@
-import { createStore } from 'redux'
+import { createStore } from 'redux';
+import {List, Map} from 'immutable';
+
+const initialState = Map({players: Map()});
 
 var express = require('express');
 var app = express();
@@ -9,7 +12,7 @@ app.use(express.static('public'));
 
 io.on('connection', function (socket) {
   console.log(socket.client.conn.id);
-  io.emit('data', 'hello world');
+  io.emit('data', initialState.toJS());
 });
 
 http.listen(3000, function() {
