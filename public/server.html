@@ -6,11 +6,12 @@
     <script>
       var socket = io();
       socket.on('data', function (data) {
-        console.log(data);
+        console.log(JSON.stringify(data, null, 2));
       });
     </script>
   </head>
   <body>
-    <h1>Server App</h1>
+    <div id="app"></div>
+    <script src="server.js"></script>
   </body>
 </html>
