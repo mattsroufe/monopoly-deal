@@ -7,7 +7,6 @@ const socket = io();
 let clientId;
 socket.on('connect', function () {
   clientId = socket.id;
-  console.log(clientId);
 });
 
 const submitName = (e) => {
@@ -27,7 +26,6 @@ const startGame = () => {
 
 const ClientApp = ({started, players}) => (
   <div>
-    {console.log(players)}
     <h1>Client App</h1>
     <p>{clientId}</p>
     {players[clientId].name ? (

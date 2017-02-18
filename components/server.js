@@ -6,7 +6,6 @@ const socket = io();
 
 const ServerApp = ({players}) => (
   <div>
-    {console.log(players)}
     <h1>Server App</h1>
     <ul>
       {Object.keys(players).map((key) =>
