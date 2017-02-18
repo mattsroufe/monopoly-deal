@@ -10,16 +10,29 @@ socket.on('connect', function () {
   console.log(clientId);
 });
 
+const submitName = (e) => {
+  socket.emit('action', {
+    type: 'SET_PLAYER_NAME',
+    clientId: clientId,
+    value: document.getElementById('name').value
+  });
+  e.preventDefault();
+}
+
 const ClientApp = ({players}) => (
   <div>
     {console.log(players)}
     <h1>Client App</h1>
     <p>{clientId}</p>
-    {players[clientId].name &&
+    {players[clientId].name ? (
       <h2>{players[clientId].name}</h2>
-    } else {
-      <p>No name yet</p>
-    }
+    ) : (
+      <div>
+        <label htmlFor="name">Name</label>
+        <input type="text" id="name" />
+        <input onClick={submitName} type="submit" value="Submit" />
+      </div>
+    )}
   </div>
 )
 

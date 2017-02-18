@@ -17,6 +17,10 @@ io.on('connection', function (socket) {
       clientId: socket.client.conn.id
     });
   }
+  socket.on('action', (action) => {
+    store.dispatch(action);
+    io.emit('data', store.getState().toJS());
+  });
   io.emit('data', store.getState().toJS());
 });
 
