@@ -2,20 +2,9 @@
 <html>
   <head>
     <title>Monopoly Deal</title>
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-      var socket = io();
-      var clientId;
-      socket.on('connect', function () {
-        clientId = socket.id;
-        console.log(clientId);
-      });
-      socket.on('data', function (data) {
-        console.log(data);
-      });
-    </script>
   </head>
   <body>
-    <h1>Client App</h1>
+    <div id="app"></div>
+    <script src="client.js"></script>
   </body>
 </html>

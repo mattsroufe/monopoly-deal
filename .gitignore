@@ -2,3 +2,4 @@
 node_modules
 npm-debug.log
 public/server.js
+public/client.js
