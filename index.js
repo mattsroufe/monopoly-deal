@@ -1,7 +1,7 @@
-import { createStore } from 'redux';
-import {List, Map} from 'immutable';
+import { createStore } from 'redux'
+import monopolyDeal from './reducers'
 
-const initialState = Map({players: Map()});
+let store = createStore(monopolyDeal)
 
 var express = require('express');
 var app = express();
@@ -11,8 +11,13 @@ var io = require('socket.io')(http);
 app.use(express.static('public'));
 
 io.on('connection', function (socket) {
-  console.log(socket.client.conn.id);
-  io.emit('data', initialState.toJS());
+  if ( !socket.handshake.headers.referer.match(/server/g) ) {
+    store.dispatch({
+      type: 'ADD_PLAYER',
+      clientId: socket.client.conn.id
+    });
+    io.emit('data', store.getState().toJS());
+  }
 });
 
 http.listen(3000, function() {
