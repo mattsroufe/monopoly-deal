@@ -2,13 +2,6 @@
 <html>
   <head>
     <title>Monopoly Deal - Server</title>
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-      var socket = io();
-      socket.on('data', function (data) {
-        console.log(JSON.stringify(data, null, 2));
-      });
-    </script>
   </head>
   <body>
     <div id="app"></div>
