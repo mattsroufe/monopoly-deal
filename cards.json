@@ -1,4 +1,32 @@
 {
-  "name": "Just Say No"
+  "cards": [
+    {
+      "type": "property",
+      "name": "Whitechapel Road",
+      "color": "brown",
+      "rent": {
+        "1": 1,
+        "2": 2
+      },
+      "value": 1
+    },
+    {
+      "type": "property",
+      "name": "Old Kent Road",
+      "color": "brown",
+      "rent": {
+        "1": 1,
+        "2": 2
+      },
+      "value": 1
+    },
+    {
+      "type": "action",
+      "name": "Just Say No",
+      "count": 3
+    },
+    {
+      "type": "rent"
+    }
+  ]
 }
-
