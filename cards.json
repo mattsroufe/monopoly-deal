@@ -81,302 +81,573 @@
   },
   "cards": [
     {
+      "id": "1",
       "type": "property",
       "name": "Whitechapel Road",
-      "color": "brown"
+      "group": "brown"
     },
     {
+      "id": "2",
       "type": "property",
       "name": "Old Kent Road",
-      "color": "brown"
+      "group": "brown"
     },
     {
+      "id": "3",
       "type": "property",
       "name": "The Angel, Islington",
-      "color": "lightblue"
+      "group": "lightblue"
     },
     {
+      "id": "4",
       "type": "property",
       "name": "Pentonville Road",
-      "color": "lightblue"
+      "group": "lightblue"
     },
     {
+      "id": "5",
       "type": "property",
       "name": "Euston Road",
-      "color": "lightblue"
+      "group": "lightblue"
     },
     {
+      "id": "6",
       "type": "property",
       "name": "Whitehall",
-      "color": "pink"
+      "group": "pink"
     },
     {
+      "id": "7",
       "type": "property",
       "name": "Northcuberland Avenue",
-      "color": "pink"
+      "group": "pink"
     },
     {
+      "id": "8",
       "type": "property",
       "name": "Pall Mall",
-      "color": "pink"
+      "group": "pink"
     },
     {
+      "id": "9",
       "type": "property",
       "name": "Marlborough Street",
-      "color": "orange"
+      "group": "orange"
     },
     {
+      "id": "10",
       "type": "property",
       "name": "Bow Street",
-      "color": "orange"
+      "group": "orange"
     },
     {
+      "id": "11",
       "type": "property",
       "name": "Vine Street",
-      "color": "orange"
+      "group": "orange"
     },
     {
+      "id": "12",
       "type": "property",
       "name": "Strand",
-      "color": "red"
+      "group": "red"
     },
     {
+      "id": "13",
       "type": "property",
       "name": "Trafalgar Square",
-      "color": "red"
+      "group": "red"
     },
     {
+      "id": "14",
       "type": "property",
       "name": "Fleet Street",
-      "color": "red"
+      "group": "red"
     },
     {
+      "id": "15",
       "type": "property",
       "name": "Piccadilly",
-      "color": "yellow"
+      "group": "yellow"
     },
     {
+      "id": "16",
       "type": "property",
       "name": "Coventry Street",
-      "color": "yellow"
+      "group": "yellow"
     },
     {
+      "id": "17",
       "type": "property",
       "name": "Leicester Square",
-      "color": "yellow"
+      "group": "yellow"
     },
     {
+      "id": "18",
       "type": "property",
       "name": "Bond Street",
-      "color": "green"
+      "group": "green"
     },
     {
+      "id": "19",
       "type": "property",
       "name": "Regent Street",
-      "color": "green"
+      "group": "green"
     },
     {
+      "id": "20",
       "type": "property",
       "name": "Oxford Street",
-      "color": "green"
+      "group": "green"
     },
     {
+      "id": "21",
       "type": "property",
       "name": "Park Lane",
-      "color": "blue"
+      "group": "blue"
     },
     {
+      "id": "22",
       "type": "property",
       "name": "Mayfair",
-      "color": "blue"
+      "group": "blue"
     },
     {
+      "id": "23",
       "type": "property",
       "name": "Liverpool St. Station",
-      "color": "station"
+      "group": "station"
     },
     {
+      "id": "24",
       "type": "property",
       "name": "Fenchurch St. Station",
-      "color": "station"
+      "group": "station"
     },
     {
+      "id": "25",
       "type": "property",
       "name": "Kings Cross Station",
-      "color": "station"
+      "group": "station"
     },
     {
+      "id": "26",
       "type": "property",
       "name": "Marylebone Station",
-      "color": "station"
+      "group": "station"
     },
     {
+      "id": "27",
       "type": "property",
       "name": "Water Works",
-      "color": "utility"
+      "group": "utility"
     },
     {
+      "id": "28",
       "type": "property",
       "name": "Electric Company",
-      "color": "utility"
+      "group": "utility"
     },
     {
+      "id": "29",
       "type": "property-wildcard",
-      "count": 1,
-      "colors": ["lightblue", "brown"],
+      "groups": ["lightblue", "brown"],
       "value": 1
     },
     {
+      "id": "30",
       "type": "property-wildcard",
-      "count": 1,
-      "colors": ["lightblue", "station"],
+      "groups": ["lightblue", "station"],
       "value": 4
     },
     {
+      "id": "31",
       "type": "property-wildcard",
-      "count": 2,
-      "colors": ["pink", "orange"],
+      "groups": ["pink", "orange"],
       "value": 2
     },
     {
+      "id": "32",
       "type": "property-wildcard",
-      "count": 2,
-      "colors": ["red", "yellow"],
+      "groups": ["pink", "orange"],
+      "value": 2
+    },
+    {
+      "id": "33",
+      "type": "property-wildcard",
+      "groups": ["red", "yellow"],
       "value": 3
     },
     {
+      "id": "34",
       "type": "property-wildcard",
-      "count": 1,
-      "colors": ["blue", "green"],
+      "groups": ["red", "yellow"],
+      "value": 3
+    },
+    {
+      "id": "35",
+      "type": "property-wildcard",
+      "groups": ["blue", "green"],
       "value": 4
     },
     {
+      "id": "36",
       "type": "property-wildcard",
-      "count": 1,
-      "colors": ["green", "station"],
+      "groups": ["green", "station"],
       "value": 4
     },
     {
+      "id": "37",
       "type": "property-wildcard",
-      "count": 1,
-      "colors": ["utility", "station"],
+      "groups": ["utility", "station"],
       "value": 2
     },
     {
+      "id": "38",
       "type": "property-wildcard",
-      "count": 2,
-      "colors": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"],
+      "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"],
       "value": 2
     },
     {
-      "type": "action",
-      "name": "Deal Breaker",
-      "count": 2
+      "id": "39",
+      "type": "property-wildcard",
+      "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"],
+      "value": 2
     },
     {
+      "id": "40",
       "type": "action",
-      "name": "Forced Deal",
-      "count": 3
+      "name": "Deal Breaker"
     },
     {
+      "id": "41",
       "type": "action",
-      "name": "Sly Deal",
-      "count": 3
+      "name": "Deal Breaker"
     },
     {
+      "id": "42",
       "type": "action",
-      "name": "Just Say No",
-      "count": 3
+      "name": "Forced Deal"
     },
     {
+      "id": "43",
       "type": "action",
-      "name": "Debt Collector",
-      "count": 3
+      "name": "Forced Deal"
     },
     {
+      "id": "44",
       "type": "action",
-      "name": "It's My Birthday",
-      "count": 3
+      "name": "Forced Deal"
     },
     {
+      "id": "45",
       "type": "action",
-      "name": "Double the Rent",
-      "count": 2
+      "name": "Sly Deal"
     },
     {
+      "id": "46",
       "type": "action",
-      "name": "House",
-      "count": 3
+      "name": "Sly Deal"
     },
     {
+      "id": "47",
       "type": "action",
-      "name": "Hotel",
-      "count": 2
+      "name": "Sly Deal"
     },
     {
+      "id": "48",
       "type": "action",
-      "name": "Pass Go",
-      "count": 10
+      "name": "Just Say No"
     },
     {
+      "id": "49",
+      "type": "action",
+      "name": "Just Say No"
+    },
+    {
+      "id": "50",
+      "type": "action",
+      "name": "Just Say No"
+    },
+    {
+      "id": "51",
+      "type": "action",
+      "name": "Debt Collector"
+    },
+    {
+      "id": "52",
+      "type": "action",
+      "name": "Debt Collector"
+    },
+    {
+      "id": "53",
+      "type": "action",
+      "name": "Debt Collector"
+    },
+    {
+      "id": "54",
+      "type": "action",
+      "name": "It's My Birthday"
+    },
+    {
+      "id": "55",
+      "type": "action",
+      "name": "It's My Birthday"
+    },
+    {
+      "id": "56",
+      "type": "action",
+      "name": "It's My Birthday"
+    },
+     {
+      "id": "57",
+      "type": "action",
+      "name": "Double the Rent"
+    },
+    {
+      "id": "58",
+      "type": "action",
+      "name": "Double the Rent"
+    },
+    {
+      "id": "59",
+      "type": "action",
+      "name": "House"
+    },
+    {
+      "id": "60",
+      "type": "action",
+      "name": "House"
+    },
+    {
+      "id": "61",
+      "type": "action",
+      "name": "House"
+    },
+    {
+      "id": "62",
+      "type": "action",
+      "name": "Hotel"
+    },
+    {
+      "id": "63",
+      "type": "action",
+      "name": "Hotel"
+    },
+    {
+      "id": "64",
+      "type": "action",
+      "name": "Pass Go"
+    },
+    {
+      "id": "65",
+      "type": "action",
+      "name": "Pass Go"
+    },
+    {
+      "id": "66",
+      "type": "action",
+      "name": "Pass Go"
+    },
+    {
+      "id": "67",
+      "type": "action",
+      "name": "Pass Go"
+    },
+    {
+      "id": "68",
+      "type": "action",
+      "name": "Pass Go"
+    },
+    {
+      "id": "69",
+      "type": "action",
+      "name": "Pass Go"
+    },
+    {
+      "id": "70",
+      "type": "action",
+      "name": "Pass Go"
+    },
+    {
+      "id": "71",
+      "type": "action",
+      "name": "Pass Go"
+    },
+    {
+      "id": "72",
+      "type": "action",
+      "name": "Pass Go"
+    },
+    {
+      "id": "73",
+      "type": "action",
+      "name": "Pass Go"
+    },
+    {
+      "id": "74",
       "type": "rent",
-      "colors": ["lightblue", "brown"],
-      "count": 2
+      "groups": ["lightblue", "brown"]
     },
     {
+      "id": "75",
       "type": "rent",
-      "colors": ["pink", "orange"],
-      "count": 2
+      "groups": ["lightblue", "brown"]
     },
     {
+      "id": "76",
       "type": "rent",
-      "colors": ["red", "yellow"],
-      "count": 2
+      "groups": ["pink", "orange"]
     },
     {
+      "id": "77",
       "type": "rent",
-      "colors": ["blue", "green"],
-      "count": 2
+      "groups": ["pink", "orange"]
     },
     {
+      "id": "78",
       "type": "rent",
-      "colors": ["station", "utility"],
-      "count": 2
+      "groups": ["red", "yellow"]
     },
     {
+      "id": "79",
       "type": "rent",
-      "colors": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"],
-      "count": 3
+      "groups": ["red", "yellow"]
     },
     {
-      "type": "money",
-      "value": 1,
-      "count": 6
+      "id": "80",
+      "type": "rent",
+      "groups": ["blue", "green"]
     },
     {
-      "type": "money",
-      "value": 2,
-      "count": 5
+      "id": "81",
+      "type": "rent",
+      "groups": ["blue", "green"]
     },
     {
-      "type": "money",
-      "value": 3,
-      "count": 3
+      "id": "82",
+      "type": "rent",
+      "groups": ["station", "utility"]
     },
     {
-      "type": "money",
-      "value": 4,
-      "count": 3
+      "id": "83",
+      "type": "rent",
+      "groups": ["station", "utility"]
     },
     {
-      "type": "money",
-      "value": 5,
-      "count": 2
+      "id": "84",
+      "type": "rent",
+      "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"]
     },
     {
+      "id": "85",
+      "type": "rent",
+      "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"]
+    },
+    {
+      "id": "86",
+      "type": "rent",
+      "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"]
+    },
+    {
+      "id": "87",
       "type": "money",
-      "value": 10,
-      "count": 1
+      "value": 1
+    },
+    {
+      "id": "88",
+      "type": "money",
+      "value": 1
+    },
+    {
+      "id": "89",
+      "type": "money",
+      "value": 1
+    },
+    {
+      "id": "90",
+      "type": "money",
+      "value": 1
+    },
+    {
+      "id": "91",
+      "type": "money",
+      "value": 1
+    },
+    {
+      "id": "92",
+      "type": "money",
+      "value": 1
+    },
+    {
+      "id": "93",
+      "type": "money",
+      "value": 2
+    },
+    {
+      "id": "94",
+      "type": "money",
+      "value": 2
+    },
+    {
+      "id": "95",
+      "type": "money",
+      "value": 2
+    },
+    {
+      "id": "96",
+      "type": "money",
+      "value": 2
+    },
+    {
+      "id": "97",
+      "type": "money",
+      "value": 2
+    },
+    {
+      "id": "98",
+      "type": "money",
+      "value": 3
+    },
+    {
+      "id": "99",
+      "type": "money",
+      "value": 3
+    },
+    {
+      "id": "100",
+      "type": "money",
+      "value": 3
+    },
+    {
+      "id": "101",
+      "type": "money",
+      "value": 4
+    },
+    {
+      "id": "102",
+      "type": "money",
+      "value": 4
+    },
+    {
+      "id": "103",
+      "type": "money",
+      "value": 4
+    },
+    {
+      "id": "104",
+      "type": "money",
+      "value": 5
+    },
+    {
+      "id": "105",
+      "type": "money",
+      "value": 5
+    },
+    {
+      "id": "106",
+      "type": "money",
+      "value": 10
     }
   ]
 }
