@@ -270,8 +270,53 @@
     },
     {
       "type": "action",
+      "name": "Deal Breaker",
+      "count": 2
+    },
+    {
+      "type": "action",
+      "name": "Forced Deal",
+      "count": 3
+    },
+    {
+      "type": "action",
+      "name": "Sly Deal",
+      "count": 3
+    },
+    {
+      "type": "action",
       "name": "Just Say No",
       "count": 3
+    },
+    {
+      "type": "action",
+      "name": "Debt Collector",
+      "count": 3
+    },
+    {
+      "type": "action",
+      "name": "It's My Birthday",
+      "count": 3
+    },
+    {
+      "type": "action",
+      "name": "Double the Rent",
+      "count": 2
+    },
+    {
+      "type": "action",
+      "name": "House",
+      "count": 3
+    },
+    {
+      "type": "action",
+      "name": "Hotel",
+      "count": 2
+    },
+    {
+      "type": "action",
+      "name": "Pass Go",
+      "count": 10
     },
     {
       "type": "rent"
