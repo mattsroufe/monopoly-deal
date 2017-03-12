@@ -319,7 +319,64 @@
       "count": 10
     },
     {
-      "type": "rent"
+      "type": "rent",
+      "colors": ["lightblue", "brown"],
+      "count": 2
+    },
+    {
+      "type": "rent",
+      "colors": ["pink", "orange"],
+      "count": 2
+    },
+    {
+      "type": "rent",
+      "colors": ["red", "yellow"],
+      "count": 2
+    },
+    {
+      "type": "rent",
+      "colors": ["blue", "green"],
+      "count": 2
+    },
+    {
+      "type": "rent",
+      "colors": ["station", "utility"],
+      "count": 2
+    },
+    {
+      "type": "rent",
+      "colors": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"],
+      "count": 3
+    },
+    {
+      "type": "money",
+      "value": 1,
+      "count": 6
+    },
+    {
+      "type": "money",
+      "value": 2,
+      "count": 5
+    },
+    {
+      "type": "money",
+      "value": 3,
+      "count": 3
+    },
+    {
+      "type": "money",
+      "value": 4,
+      "count": 3
+    },
+    {
+      "type": "money",
+      "value": 5,
+      "count": 2
+    },
+    {
+      "type": "money",
+      "value": 10,
+      "count": 1
     }
   ]
 }
