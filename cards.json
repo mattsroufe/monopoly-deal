@@ -1,24 +1,272 @@
 {
-  "cards": [
-    {
-      "type": "property",
-      "name": "Whitechapel Road",
-      "color": "brown",
+  "properties": {
+    "brown": {
       "rent": {
         "1": 1,
         "2": 2
       },
       "value": 1
     },
-    {
-      "type": "property",
-      "name": "Old Kent Road",
-      "color": "brown",
+     "lightblue": {
+      "rent": {
+        "1": 1,
+        "2": 2,
+        "3": 3
+      },
+      "value": 1
+    },
+    "pink": {
+      "rent": {
+        "1": 1,
+        "2": 2,
+        "3": 4
+      },
+      "value": 2
+    },
+    "organge": {
+      "rent": {
+        "1": 1,
+        "2": 3,
+        "3": 5
+      },
+      "value": 2
+    },
+    "red": {
+      "rent": {
+        "1": 2,
+        "2": 3,
+        "3": 6
+      },
+      "value": 3
+    },
+    "yellow": {
+      "rent": {
+        "1": 2,
+        "2": 4,
+        "3": 6
+      },
+      "value": 3
+    },
+    "green": {
+      "rent": {
+        "1": 2,
+        "2": 4,
+        "3": 7
+      },
+      "value": 4
+    },
+    "blue": {
+      "rent" : {
+        "1": 3,
+        "2": 8
+      },
+      "value": 4
+    },
+    "station": {
+      "rent": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4
+      },
+      "value": 2
+    },
+    "utility": {
       "rent": {
         "1": 1,
         "2": 2
       },
+      "value": 2
+    }
+  },
+  "cards": [
+    {
+      "type": "property",
+      "name": "Whitechapel Road",
+      "color": "brown"
+    },
+    {
+      "type": "property",
+      "name": "Old Kent Road",
+      "color": "brown"
+    },
+    {
+      "type": "property",
+      "name": "The Angel, Islington",
+      "color": "lightblue"
+    },
+    {
+      "type": "property",
+      "name": "Pentonville Road",
+      "color": "lightblue"
+    },
+    {
+      "type": "property",
+      "name": "Euston Road",
+      "color": "lightblue"
+    },
+    {
+      "type": "property",
+      "name": "Whitehall",
+      "color": "pink"
+    },
+    {
+      "type": "property",
+      "name": "Northcuberland Avenue",
+      "color": "pink"
+    },
+    {
+      "type": "property",
+      "name": "Pall Mall",
+      "color": "pink"
+    },
+    {
+      "type": "property",
+      "name": "Marlborough Street",
+      "color": "orange"
+    },
+    {
+      "type": "property",
+      "name": "Bow Street",
+      "color": "orange"
+    },
+    {
+      "type": "property",
+      "name": "Vine Street",
+      "color": "orange"
+    },
+    {
+      "type": "property",
+      "name": "Strand",
+      "color": "red"
+    },
+    {
+      "type": "property",
+      "name": "Trafalgar Square",
+      "color": "red"
+    },
+    {
+      "type": "property",
+      "name": "Fleet Street",
+      "color": "red"
+    },
+    {
+      "type": "property",
+      "name": "Piccadilly",
+      "color": "yellow"
+    },
+    {
+      "type": "property",
+      "name": "Coventry Street",
+      "color": "yellow"
+    },
+    {
+      "type": "property",
+      "name": "Leicester Square",
+      "color": "yellow"
+    },
+    {
+      "type": "property",
+      "name": "Bond Street",
+      "color": "green"
+    },
+    {
+      "type": "property",
+      "name": "Regent Street",
+      "color": "green"
+    },
+    {
+      "type": "property",
+      "name": "Oxford Street",
+      "color": "green"
+    },
+    {
+      "type": "property",
+      "name": "Park Lane",
+      "color": "blue"
+    },
+    {
+      "type": "property",
+      "name": "Mayfair",
+      "color": "blue"
+    },
+    {
+      "type": "property",
+      "name": "Liverpool St. Station",
+      "color": "station"
+    },
+    {
+      "type": "property",
+      "name": "Fenchurch St. Station",
+      "color": "station"
+    },
+    {
+      "type": "property",
+      "name": "Kings Cross Station",
+      "color": "station"
+    },
+    {
+      "type": "property",
+      "name": "Marylebone Station",
+      "color": "station"
+    },
+    {
+      "type": "property",
+      "name": "Water Works",
+      "color": "utility"
+    },
+    {
+      "type": "property",
+      "name": "Electric Company",
+      "color": "utility"
+    },
+    {
+      "type": "property-wildcard",
+      "count": 1,
+      "colors": ["lightblue", "brown"],
       "value": 1
+    },
+    {
+      "type": "property-wildcard",
+      "count": 1,
+      "colors": ["lightblue", "station"],
+      "value": 4
+    },
+    {
+      "type": "property-wildcard",
+      "count": 2,
+      "colors": ["pink", "orange"],
+      "value": 2
+    },
+    {
+      "type": "property-wildcard",
+      "count": 2,
+      "colors": ["red", "yellow"],
+      "value": 3
+    },
+    {
+      "type": "property-wildcard",
+      "count": 1,
+      "colors": ["blue", "green"],
+      "value": 4
+    },
+    {
+      "type": "property-wildcard",
+      "count": 1,
+      "colors": ["green", "station"],
+      "value": 4
+    },
+    {
+      "type": "property-wildcard",
+      "count": 1,
+      "colors": ["utility", "station"],
+      "value": 2
+    },
+    {
+      "type": "property-wildcard",
+      "count": 2,
+      "colors": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"],
+      "value": 2
     },
     {
       "type": "action",
