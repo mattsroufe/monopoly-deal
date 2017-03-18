@@ -24,24 +24,32 @@ const startGame = () => {
   });
 }
 
-const ClientApp = ({started, players}) => (
-  <div>
-    <h1>Client App</h1>
-    <p>{clientId}</p>
-    {false && players[clientId].name ? (
-      <h2>{players[clientId].name}</h2>
-    ) : (
-      <form onSubmit={addPlayer}>
-        <label htmlFor="name">Name</label>
-        <input type="text" id="name" />
-        <input type="submit" value="Submit" />
-      </form>
-    )}
-    {Object.keys(players).length > 1 && !started &&
-      <button onClick={startGame}>Start Game</button>
+const ClientApp = ({started, players}) => {
+  let player = {};
+  players.map((p) => {
+    if ( p.clientId === clientId ) {
+      player = p
     }
-  </div>
-)
+  });
+  return (
+    <div>
+      <h1>Client App</h1>
+      <p>{clientId}</p>
+      {player.name ? (
+        <h2>{player.name}</h2>
+      ) : (
+        <form onSubmit={addPlayer}>
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" />
+          <input type="submit" value="Submit" />
+        </form>
+      )}
+      {players.length > 1 && !started &&
+        <button onClick={startGame}>Start Game</button>
+      }
+    </div>
+  )
+}
 
 ClientApp.defaultProps = {
   players: []
