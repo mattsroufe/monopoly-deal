@@ -1,23 +1,23 @@
 import {List, Map, fromJS} from 'immutable'
 
-const initialState = fromJS({
+const initialState = Map({
   started: false,
-  players: [],
-  deck: require('../cards.json')
+  players: List(),
+  deck: List(require('../cards.json'))
 })
 
 const monopolyDeal = (state = initialState, action) => {
   let players;
   switch (action.type) {
     case 'ADD_PLAYER':
-      players = state.get('players').push(Map({clientId: action.clientId, name: action.name}))
+      players = state.get('players').push({clientId: action.clientId, name: action.name})
       return state.set('players', players)
     case 'START_GAME':
       players = List();
       state.get('players').map((player) => {
-        players = players.push(fromJS(player).merge({cards: []}));
+        players = players.push({foo: 'bar'})
       });
-      return state.merge({started: true}, {players: players});
+      return state.merge({started: true}, {players: players})
     default:
       return state
   }

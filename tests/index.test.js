@@ -6,7 +6,7 @@ const cards = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 describe('monopolyDeal reducer', () => {
   let initialState = fromJS({
     started: false,
-    players: {},
+    players: [],
     deck: cards
   })
 
@@ -16,7 +16,7 @@ describe('monopolyDeal reducer', () => {
     ).toEqual(initialState)
   })
 
-  it('should handle ADD_TODO', () => {
+  it('should handle ADD_PLAYER', () => {
     expect(
       monopolyDeal(initialState, {
         type: 'ADD_PLAYER',
@@ -30,6 +30,39 @@ describe('monopolyDeal reducer', () => {
           {
             clientId: '1',
             name: 'Matt'
+          }
+        ],
+        deck: cards
+      })
+    )
+  })
+
+  it('should handle START_GAME', () => {
+    let state = initialState.merge({
+      players: [
+        {
+          name: 'Matt'
+        },
+        {
+          name: 'Bonnie'
+        }
+      ]
+    });
+    expect(
+      monopolyDeal(state, {
+        type: 'START_GAME'
+      })
+    ).toEqual(
+      fromJS({
+        started: true,
+        players: [
+          {
+            name: 'Matt',
+            cards: []
+          },
+          {
+            name: 'Bonnie',
+            cards: []
           }
         ],
         deck: cards
