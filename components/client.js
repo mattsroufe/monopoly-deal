@@ -9,13 +9,15 @@ socket.on('connect', function () {
   clientId = socket.id;
 });
 
-const submitName = (e) => {
-  socket.emit('action', {
-    type: 'SET_PLAYER_NAME',
-    clientId: clientId,
-    value: document.getElementById('name').value
-  });
-  e.preventDefault();
+const addPlayer = (clientId) => {
+  return (e) => ({
+    socket.emit('action', {
+      type: 'ADD_PLAYER',
+      clientId: clientId,
+      value: document.getElementById('name').value
+    });
+    e.preventDefault();
+  })
 }
 
 const startGame = () => {
@@ -28,14 +30,14 @@ const ClientApp = ({started, players}) => (
   <div>
     <h1>Client App</h1>
     <p>{clientId}</p>
-    {players[clientId].name ? (
+    {false && players[clientId].name ? (
       <h2>{players[clientId].name}</h2>
     ) : (
-      <div>
+      <form>
         <label htmlFor="name">Name</label>
         <input type="text" id="name" />
-        <input onClick={submitName} type="submit" value="Submit" />
-      </div>
+        <input onSubmit={addPlayer(clientId)} type="submit" value="Submit" />
+      </form>
     )}
     {Object.keys(players).length > 1 && !started &&
       <button onClick={startGame}>Start Game</button>

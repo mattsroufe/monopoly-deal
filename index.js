@@ -11,12 +11,6 @@ var io = require('socket.io')(http);
 app.use(express.static('public'));
 
 io.on('connection', function (socket) {
-  if ( !socket.handshake.headers.referer.match(/server/g) ) {
-    store.dispatch({
-      type: 'ADD_PLAYER',
-      clientId: socket.client.conn.id
-    });
-  }
   socket.on('action', (action) => {
     store.dispatch(action);
     io.emit('data', store.getState().toJS());
