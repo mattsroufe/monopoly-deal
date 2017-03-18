@@ -33,7 +33,7 @@ const ClientApp = ({started, players}) => {
   });
   return (
     <div>
-      <h1>Client App</h1>
+      <h1>Monopoly Deal</h1>
       <p>{clientId}</p>
       {player.name ? (
         <h2>{player.name}</h2>
