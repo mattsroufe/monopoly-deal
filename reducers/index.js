@@ -26,7 +26,7 @@ const initialState = fromJS({
 })
 
 const monopolyDeal = (state = initialState, action) => {
-  let players, deck;
+  let players, deck, cards, firstPlayer;
   switch (action.type) {
     case 'ADD_PLAYER':
       players = state.get('players').push(Map({clientId: action.clientId, name: action.name}))
@@ -38,6 +38,11 @@ const monopolyDeal = (state = initialState, action) => {
         players = players.push(fromJS(player).merge({cards: deck.take(5)}));
         deck = deck.slice(5, deck.length)
       });
+      cards = deck.take(2)
+      deck = deck.slice(2, deck.length)
+      firstPlayer = players.get(0)
+      firstPlayer = firstPlayer.merge({cards: firstPlayer.get('cards').concat(cards)});
+      players = players.slice(1).unshift(firstPlayer)
       return state.merge({started: true, deck: deck}, {players: players});
     default:
       return state

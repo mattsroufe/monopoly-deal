@@ -34,7 +34,6 @@ const ClientApp = ({started, players}) => {
   return (
     <div>
       <h1>Monopoly Deal</h1>
-      <p>{clientId}</p>
       {player.clientId ? (
         <pre>{JSON.stringify(player, null, 2)}</pre>
       ) : (

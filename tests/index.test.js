@@ -58,14 +58,14 @@ describe('monopolyDeal reducer', () => {
         players: [
           {
             name: 'Matt',
-            cards: cards.slice(0, 5)
+            cards: cards.slice(0, 5).concat(cards.slice(10, 12))
           },
           {
             name: 'Bonnie',
             cards: cards.slice(5, 10)
           }
         ],
-        deck: cards.slice(10, 20)
+        deck: cards.slice(12, 20)
       })
     )
   })
