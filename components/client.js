@@ -35,8 +35,8 @@ const ClientApp = ({started, players}) => {
     <div>
       <h1>Monopoly Deal</h1>
       <p>{clientId}</p>
-      {player.name ? (
-        <h2>{player.name}</h2>
+      {player.clientId ? (
+        <pre>{JSON.stringify(player, null, 2)}</pre>
       ) : (
         <form onSubmit={addPlayer}>
           <label htmlFor="name">Name</label>

@@ -391,248 +391,308 @@
     "id": "38",
     "type": "property-wildcard",
     "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "darkblue", "utility", "station"],
-    "value": 2
+    "value": null
   },
   {
     "id": "39",
     "type": "property-wildcard",
-    "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"],
-    "value": 2
+    "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "darkblue", "utility", "station"],
+    "value": null
   },
   {
     "id": "40",
     "type": "action",
-    "name": "Deal Breaker"
+    "name": "Deal Breaker",
+    "value": 5
   },
   {
     "id": "41",
     "type": "action",
-    "name": "Deal Breaker"
+    "name": "Deal Breaker",
+    "value": 5
   },
   {
     "id": "42",
     "type": "action",
-    "name": "Forced Deal"
+    "name": "Forced Deal",
+    "value": 3
   },
   {
     "id": "43",
     "type": "action",
-    "name": "Forced Deal"
+    "name": "Forced Deal",
+    "value": 3
   },
   {
     "id": "44",
     "type": "action",
-    "name": "Forced Deal"
+    "name": "Forced Deal",
+    "value": 3
   },
   {
     "id": "45",
     "type": "action",
-    "name": "Sly Deal"
+    "name": "Sly Deal",
+    "value": 3
   },
   {
     "id": "46",
     "type": "action",
-    "name": "Sly Deal"
+    "name": "Sly Deal",
+    "value": 3
   },
   {
     "id": "47",
     "type": "action",
-    "name": "Sly Deal"
+    "name": "Sly Deal",
+    "value": 3
   },
   {
     "id": "48",
     "type": "action",
-    "name": "Just Say No"
+    "name": "Just Say No",
+    "value": 4
   },
   {
     "id": "49",
     "type": "action",
-    "name": "Just Say No"
+    "name": "Just Say No",
+    "value": 4
   },
   {
     "id": "50",
     "type": "action",
-    "name": "Just Say No"
+    "name": "Just Say No",
+    "value": 4
   },
   {
     "id": "51",
     "type": "action",
-    "name": "Debt Collector"
+    "name": "Debt Collector",
+    "value": 3
   },
   {
     "id": "52",
     "type": "action",
-    "name": "Debt Collector"
+    "name": "Debt Collector",
+    "value": 3
   },
   {
     "id": "53",
     "type": "action",
-    "name": "Debt Collector"
+    "name": "Debt Collector",
+    "value": 3
   },
   {
     "id": "54",
     "type": "action",
-    "name": "It's My Birthday"
+    "name": "It's My Birthday",
+    "value": 2
   },
   {
     "id": "55",
     "type": "action",
-    "name": "It's My Birthday"
+    "name": "It's My Birthday",
+    "value": 2
   },
   {
     "id": "56",
     "type": "action",
-    "name": "It's My Birthday"
+    "name": "It's My Birthday",
+    "value": 2
   },
    {
     "id": "57",
     "type": "action",
-    "name": "Double the Rent"
+    "name": "Double the Rent",
+    "value": 1
   },
   {
     "id": "58",
     "type": "action",
-    "name": "Double the Rent"
+    "name": "Double the Rent",
+    "value": 1
   },
   {
     "id": "59",
     "type": "action",
-    "name": "House"
+    "name": "House",
+    "value": 3
   },
   {
     "id": "60",
     "type": "action",
-    "name": "House"
+    "name": "House",
+    "value": 3
   },
   {
     "id": "61",
     "type": "action",
-    "name": "House"
+    "name": "House",
+    "value": 3
   },
   {
     "id": "62",
     "type": "action",
-    "name": "Hotel"
+    "name": "Hotel",
+    "value": 4
   },
   {
     "id": "63",
     "type": "action",
-    "name": "Hotel"
+    "name": "Hotel",
+    "value": 4
   },
   {
     "id": "64",
     "type": "action",
-    "name": "Pass Go"
+    "name": "Pass Go",
+    "value": 1
   },
   {
     "id": "65",
     "type": "action",
-    "name": "Pass Go"
+    "name": "Pass Go",
+    "value": 1
   },
   {
     "id": "66",
     "type": "action",
-    "name": "Pass Go"
+    "name": "Pass Go",
+    "value": 1
   },
   {
     "id": "67",
     "type": "action",
-    "name": "Pass Go"
+    "name": "Pass Go",
+    "value": 1
   },
   {
     "id": "68",
     "type": "action",
-    "name": "Pass Go"
+    "name": "Pass Go",
+    "value": 1
   },
   {
     "id": "69",
     "type": "action",
-    "name": "Pass Go"
+    "name": "Pass Go",
+    "value": 1
   },
   {
     "id": "70",
     "type": "action",
-    "name": "Pass Go"
+    "name": "Pass Go",
+    "value": 1
   },
   {
     "id": "71",
     "type": "action",
-    "name": "Pass Go"
+    "name": "Pass Go",
+    "value": 1
   },
   {
     "id": "72",
     "type": "action",
-    "name": "Pass Go"
+    "name": "Pass Go",
+    "value": 1
   },
   {
     "id": "73",
     "type": "action",
-    "name": "Pass Go"
+    "name": "Pass Go",
+    "value": 1
   },
   {
     "id": "74",
     "type": "rent",
-    "groups": ["lightblue", "brown"]
+    "groups": ["lightblue", "brown"],
+    "value": 1
+
   },
   {
     "id": "75",
     "type": "rent",
-    "groups": ["lightblue", "brown"]
+    "groups": ["lightblue", "brown"],
+    "value": 1
+
   },
   {
     "id": "76",
     "type": "rent",
-    "groups": ["pink", "orange"]
+    "groups": ["pink", "orange"],
+    "value": 1
+
   },
   {
     "id": "77",
     "type": "rent",
-    "groups": ["pink", "orange"]
+    "groups": ["pink", "orange"],
+    "value": 1
+
   },
   {
     "id": "78",
     "type": "rent",
-    "groups": ["red", "yellow"]
+    "groups": ["red", "yellow"],
+    "value": 1
+
   },
   {
     "id": "79",
     "type": "rent",
-    "groups": ["red", "yellow"]
+    "groups": ["red", "yellow"],
+    "value": 1
+
   },
   {
     "id": "80",
     "type": "rent",
-    "groups": ["blue", "green"]
+    "groups": ["darkblue", "green"],
+    "value": 1
+
   },
   {
     "id": "81",
     "type": "rent",
-    "groups": ["blue", "green"]
+    "groups": ["darkblue", "green"],
+    "value": 1
+
   },
   {
     "id": "82",
     "type": "rent",
-    "groups": ["station", "utility"]
+    "groups": ["station", "utility"],
+    "value": 1
+
   },
   {
     "id": "83",
     "type": "rent",
-    "groups": ["station", "utility"]
+    "groups": ["station", "utility"],
+    "value": 1
+
   },
   {
     "id": "84",
     "type": "rent",
-    "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"]
+    "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "darkblue", "utility", "station"],
+    "value": 3
+
   },
   {
     "id": "85",
     "type": "rent",
-    "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"]
+    "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "darkblue", "utility", "station"],
+    "value": 3
+
   },
   {
     "id": "86",
     "type": "rent",
-    "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "blue", "utility", "station"]
+    "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "darkblue", "utility", "station"],
+    "value": 3
+
   },
   {
     "id": "87",
