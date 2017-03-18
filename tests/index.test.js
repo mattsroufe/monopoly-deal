@@ -20,14 +20,18 @@ describe('monopolyDeal reducer', () => {
     expect(
       monopolyDeal(initialState, {
         type: 'ADD_PLAYER',
-        clientId: '1'
+        clientId: '1',
+        name: 'Matt'
       })
     ).toEqual(
       fromJS({
         started: false,
-        players: {
-          '1': {}
-        },
+        players: [
+          {
+            clientId: '1',
+            name: 'Matt'
+          }
+        ],
         deck: cards
       })
     )

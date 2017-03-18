@@ -9,15 +9,13 @@ socket.on('connect', function () {
   clientId = socket.id;
 });
 
-const addPlayer = (clientId) => {
-  return (e) => ({
-    socket.emit('action', {
-      type: 'ADD_PLAYER',
-      clientId: clientId,
-      value: document.getElementById('name').value
-    });
-    e.preventDefault();
-  })
+const addPlayer = (e) => {
+  e.preventDefault();
+  socket.emit('action', {
+    type: 'ADD_PLAYER',
+    clientId: clientId,
+    name: document.getElementById('name').value
+  });
 }
 
 const startGame = () => {
@@ -33,10 +31,10 @@ const ClientApp = ({started, players}) => (
     {false && players[clientId].name ? (
       <h2>{players[clientId].name}</h2>
     ) : (
-      <form>
+      <form onSubmit={addPlayer}>
         <label htmlFor="name">Name</label>
         <input type="text" id="name" />
-        <input onSubmit={addPlayer(clientId)} type="submit" value="Submit" />
+        <input type="submit" value="Submit" />
       </form>
     )}
     {Object.keys(players).length > 1 && !started &&
@@ -50,7 +48,6 @@ ClientApp.defaultProps = {
 }
 
 socket.on('data', function (data) {
-  console.log(JSON.stringify(data, null, 2));
   ReactDOM.render(
     <ClientApp {...data} />,
     document.getElementById('app')
