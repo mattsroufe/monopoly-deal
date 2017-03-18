@@ -4,14 +4,10 @@ import ReactDOM from 'react-dom';
 const io = require('../node_modules/socket.io/node_modules/socket.io-client');
 const socket = io();
 
-const ServerApp = ({players}) => (
+const ServerApp = (props) => (
   <div>
     <h1>Server App</h1>
-    <ul>
-      {Object.keys(players).map((key) =>
-        <li key={key}>{players[key].name}</li>
-      )}
-    </ul>
+    <pre>{JSON.stringify(props, null, 2)}</pre>
   </div>
 )
 
@@ -20,7 +16,6 @@ ServerApp.defaultProps = {
 }
 
 socket.on('data', function (data) {
-  console.log(JSON.stringify(data, null, 2));
   ReactDOM.render(
     <ServerApp {...data} />,
     document.getElementById('app')

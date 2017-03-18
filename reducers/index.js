@@ -3,7 +3,7 @@ import {List, Map} from 'immutable'
 const initialState = Map({
   started: false,
   players: Map(),
-  deck: Map(require('../cards.json'))
+  deck: List(require('../cards.json'))
 })
 
 const monopolyDeal = (state = initialState, action) => {
