@@ -1,7 +1,7 @@
 import monopolyDeal from '../reducers/index'
-import {fromJS} from 'immutable'
+import {List, fromJS} from 'immutable'
 
-const cards = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+const cards = List([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]);
 
 describe('monopolyDeal reducer', () => {
   let initialState = fromJS({
@@ -58,47 +58,16 @@ describe('monopolyDeal reducer', () => {
         players: [
           {
             name: 'Matt',
-            cards: []
+            cards: cards.slice(0, 5)
           },
           {
             name: 'Bonnie',
-            cards: []
+            cards: cards.slice(5, 10)
           }
         ],
-        deck: cards
+        deck: cards.slice(10, 20)
       })
     )
   })
 })
-/*
-expect(
-reducer(
-[
-{
-text: 'Use Redux',
-completed: false,
-id: 0
-}
-],
-{
-type: types.ADD_TODO,
-text: 'Run the tests'
-}
-)
-).toEqual(
-[
-{
-text: 'Run the tests',
-completed: false,
-id: 1
-},
-{
-text: 'Use Redux',
-completed: false,
-id: 0
-}
-]
-)
-})
-})
-*/
+
