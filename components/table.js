@@ -12,7 +12,7 @@ const Table = (props) => {
               {player.sets.map((set) => {
                 return (
                   set.map((card, j) => {
-                    return <li className={card.group} key={j}></li>
+                    return <li className={card.group || card.groups.join('-') } key={j}></li>
                   })
                 )
               })}

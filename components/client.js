@@ -86,7 +86,7 @@ const ClientApp = ({started, players}) => {
           <p>In hand:</p>
           <ul>
             {player.cards && player.cards.map((card, i) => {
-              return <li className={card.group} key={i}></li>
+              return <li className={card.group || card.groups && card.groups.join('-')} key={i}></li>
             })}
           </ul>
         </div>

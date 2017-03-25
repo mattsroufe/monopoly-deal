@@ -14,16 +14,31 @@ ul {
   display: flex;
   flex-align: row;
   padding-left: 16px;
+  overflow-x: scroll;
 }
 
 li {
   border: 1px solid;
   width: 50px;
+  min-width: 50px;
   height: 75px;
   margin-right: 16px;
 }
 
 .pink {
-  background: linear-gradient(180deg, #f36d85 20%, #fff 0%);
+  background: linear-gradient(180deg, pink 20%, white 0%);
 }
+
+.darkblue {
+  background: linear-gradient(180deg, darkblue 20%, white %);
+}
+
+.brown-lightblue-pink-orange-red-yellow-green-darkblue-utility-station {
+  background: linear-gradient(180deg, brown 10%, lightblue 20%, pink 30%, orange 40%, red 50%, yellow 60%, green 70%, blue 80%, black 90%, white 100%);
+}
+
+.pink-orange {
+  background: linear-gradient(pink, pink 20%, white 20%, white 80%, orange 80%, orange 100%);
+}
+
 
