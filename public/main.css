@@ -1,0 +1,29 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+  text-align: center;
+  margin: 0;
+  padding: 8px;
+}
+
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-align: row;
+  padding-left: 16px;
+}
+
+li {
+  border: 1px solid;
+  width: 50px;
+  height: 75px;
+  margin-right: 16px;
+}
+
+.pink {
+  background: linear-gradient(180deg, #f36d85 20%, #fff 0%);
+}
+

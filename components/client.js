@@ -1,12 +1,58 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Table from './table'
 
 const io = require('../node_modules/socket.io/node_modules/socket.io-client');
 const socket = io();
 
-let clientId;
-socket.on('connect', function () {
-  clientId = socket.id;
+
+let props = {
+  players: [
+    {
+      name: 'matt',
+      sets: [
+        [
+          {
+            "id": "7",
+            "type": "property",
+            "name": "Northcuberland Avenue",
+            "group": "pink",
+            "rent": {
+              "1": 1,
+              "2": 2,
+              "3": 4
+            },
+            "value": 2
+          }
+        ],
+        [
+          {
+            "id": "22",
+            "type": "property",
+            "name": "Mayfair",
+            "group": "darkblue",
+            "rent": {
+              "1": 3,
+              "2": 8
+            },
+            "value": 4
+          }
+        ]
+      ]
+    },
+    {
+      name: 'bonnie',
+      sets: []
+    }
+  ]
+};
+
+let clientId = localStorage.getItem('clientId');
+socket.on('connect', () => {
+  if ( !clientId ) {
+    clientId = socket.id
+    localStorage.setItem('clientId', clientId);
+  }
 });
 
 const addPlayer = (e) => {
@@ -33,9 +79,17 @@ const ClientApp = ({started, players}) => {
   });
   return (
     <div>
-      <h1>Monopoly Deal</h1>
+      <h3>Monopoly Deal</h3>
       {player.clientId ? (
-        <pre>{JSON.stringify(player, null, 2)}</pre>
+        <div>
+          <strong>{player.name}</strong>
+          <p>In hand:</p>
+          <ul>
+            {player.cards && player.cards.map((card, i) => {
+              return <li className={card.group} key={i}></li>
+            })}
+          </ul>
+        </div>
       ) : (
         <form onSubmit={addPlayer}>
           <label htmlFor="name">Name</label>
@@ -43,7 +97,7 @@ const ClientApp = ({started, players}) => {
           <input type="submit" value="Submit" />
         </form>
       )}
-      {players.length > 1 && !started &&
+      {players.length > 0 && !started &&
         <button onClick={startGame}>Start Game</button>
       }
     </div>
