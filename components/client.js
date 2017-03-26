@@ -47,19 +47,15 @@ let props = {
   ]
 };
 
-let clientId = localStorage.getItem('clientId');
 socket.on('connect', () => {
-  if ( !clientId ) {
-    clientId = socket.id
-    localStorage.setItem('clientId', clientId);
-  }
 });
 
 const addPlayer = (e) => {
   e.preventDefault();
+  localStorage.setItem('clientId', socket.id);
   socket.emit('action', {
     type: 'ADD_PLAYER',
-    clientId: clientId,
+    clientId: socket.id,
     name: document.getElementById('name').value
   });
 }
@@ -70,10 +66,26 @@ const startGame = () => {
   });
 }
 
+const toggleSelected = (player, card) => {
+  return (event) => {
+    let action = {
+      type: 'TOGGLE_SELECTED',
+      clientId: localStorage.getItem('clientId'),
+      cardId: card.id
+    };
+    console.log(action); 
+    socket.emit('action', action);
+    event.preventDefault();
+  }
+}
+
 const ClientApp = ({started, players}) => {
   let player = {};
+  if ( players.length === 0 ) {
+    localStorage.removeItem('clientId')
+  }
   players.map((p) => {
-    if ( p.clientId === clientId ) {
+    if ( p.clientId === localStorage.getItem('clientId') ) {
       player = p
     }
   });
@@ -84,11 +96,21 @@ const ClientApp = ({started, players}) => {
         <div>
           <strong>{player.name}</strong>
           <p>In hand:</p>
-          <ul>
+          <div className='cards'>
             {player.cards && player.cards.map((card, i) => {
-              return <li className={card.group || card.groups && card.groups.join('-')} key={i}></li>
+              let className
+              if ( card.group || card.groups ) {
+                className = card.group || card.groups && card.groups.join('-')
+              } else if ( card.type === 'money' ) {
+                className = 'money-' + card.value
+              }
+              if ( className === 'utility' || card.type === 'action' ) {
+                className = card.name.split(' ').join('-').toLowerCase()
+              }
+              return <div className={'card ' + className} key={i} onClick={toggleSelected(player, card)}>{card.name || card.type}</div>
             })}
-          </ul>
+          </div>
+          <p>On table:</p>
         </div>
       ) : (
         <form onSubmit={addPlayer}>
