@@ -336,77 +336,77 @@
   "29": {
     "id": "29",
     "type": "property-wildcard",
-    "name:" "Property Wildcard",
+    "name": "Property Wildcard",
     "groups": ["lightblue", "brown"],
     "value": 1
   },
   "30": {
     "id": "30",
     "type": "property-wildcard",
-    "name:" "Property Wildcard",
+    "name": "Property Wildcard",
     "groups": ["lightblue", "station"],
     "value": 4
   },
   "31": {
     "id": "31",
     "type": "property-wildcard",
-    "name:" "Property Wildcard",
+    "name": "Property Wildcard",
     "groups": ["pink", "orange"],
     "value": 2
   },
   "32": {
     "id": "32",
     "type": "property-wildcard",
-    "name:" "Property Wildcard",
+    "name": "Property Wildcard",
     "groups": ["pink", "orange"],
     "value": 2
   },
   "33": {
     "id": "33",
     "type": "property-wildcard",
-    "name:" "Property Wildcard",
+    "name": "Property Wildcard",
     "groups": ["red", "yellow"],
     "value": 3
   },
   "34": {
     "id": "34",
     "type": "property-wildcard",
-    "name:" "Property Wildcard",
+    "name": "Property Wildcard",
     "groups": ["red", "yellow"],
     "value": 3
   },
   "35": {
     "id": "35",
     "type": "property-wildcard",
-    "name:" "Property Wildcard",
+    "name": "Property Wildcard",
     "groups": ["darkblue", "green"],
     "value": 4
   },
   "36": {
     "id": "36",
     "type": "property-wildcard",
-    "name:" "Property Wildcard",
+    "name": "Property Wildcard",
     "groups": ["green", "station"],
     "value": 4
   },
   "37": {
     "id": "37",
     "type": "property-wildcard",
-    "name:" "Property Wildcard",
+    "name": "Property Wildcard",
     "groups": ["utility", "station"],
     "value": 2
   },
   "38": {
     "id": "38",
     "type": "property-wildcard",
-    "name:" "Property Wildcard",
+    "name": "Property Wildcard",
     "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "darkblue", "utility", "station"],
     "value": null
   },
   "39": {
     "id": "39",
     "type": "property-wildcard",
-    "name:" "Property Wildcard",
+    "name": "Property Wildcard",
     "groups": ["brown", "lightblue", "pink", "orange", "red", "yellow", "green", "darkblue", "utility", "station"],
     "value": null
   },
