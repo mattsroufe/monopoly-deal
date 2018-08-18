@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const http = require('http').Server(app);
@@ -16,23 +15,9 @@ app.get('/', function (req, res) {
 
 io.on('connection', function(socket) {
   socket.on('action', (action) => {
-    console.log(action);
     store.dispatch(action);
     io.emit('data', store.getState());
   });
-  io.emit('data', store.getState());
 });
 
 http.listen(process.env.PORT || 8080);
-
-// {
-//   players: {
-//     id: {
-//       id,
-//       hand,
-//       bank,
-//       property
-//     }
-//   }
-//   deck: []
-// }
