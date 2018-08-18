@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import socketIOClient from "socket.io-client";
 
 class App extends Component {
+  componentDidMount() {
+    const socket = socketIOClient("http://localhost:3000");
+    socket.on("FromAPI", data => this.setState({ response: data }));
+  }
+
   render() {
     return (
       <div className="App">
