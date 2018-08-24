@@ -55,10 +55,6 @@ class App extends Component {
             <h1 className="App-title">Monopoly Deal</h1>
           </header>
           <div style={{textAlign:'left', margin: '32px'}}>
-            <h2>
-              {currentPlayer}
-              {currentPlayer === this.state.currentPlayer ? <span> - it's your turn</span> : <span></span>}
-            </h2>
             <p>
               {this.state.players.map((playerName, i) => {
                 if (i !== 0) {
@@ -69,6 +65,11 @@ class App extends Component {
                 return <span key={i}>Players: <a href="#">{playerName}</a></span>
               })}
             </p>
+            <h2>
+              {currentPlayer}
+              {currentPlayer === this.state.currentPlayer ? <span className="your-turn">it's your turn</span> : <span></span>}
+              {currentPlayer === this.state.currentPlayer ? <p className="turns-remaining">3 turns remaining</p> : <span></span>}
+            </h2>
             {this.state.started ?
               <div>
                 <h2>Your hand:</h2>

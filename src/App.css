@@ -27,6 +27,20 @@ h3 {
   justify-content: center;
 }
 
+.your-turn {
+  color: #4caf50;
+  border: 1px solid;
+  margin-left: 20px;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.turns-remaining {
+  color: #2c2cf1;
+  font-size: 16px;
+}
+
 .selected {
   outline: 3px blue solid;
   outline-offset: 3px;
