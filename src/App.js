@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import socketIOClient from "socket.io-client";
 const socket = socketIOClient("http://localhost:3000");
@@ -10,6 +10,10 @@ class App extends Component {
   componentDidMount() {
     fetch('cards.json').then(response => response.json()).then(data => cards = data)
     socket.on('data', function(data) {
+      console.log(data);
+      if (Object.keys(data.players).length === 0) {
+        currentPlayer = null
+      }
       this.setState(data);
     }.bind(this));
   }
@@ -23,6 +27,18 @@ class App extends Component {
     });
   }
 
+  toggleSelected(card) {
+    return (event) => {
+      let action = {
+        type: 'TOGGLE_SELECTED',
+        player: currentPlayer,
+        cardId: card.id
+      };
+      socket.emit('action', action);
+      event.preventDefault();
+    }
+  }
+
   startGame() {
     socket.emit('action', {
       type: 'START_GAME'
@@ -31,32 +47,78 @@ class App extends Component {
 
   render() {
     if (currentPlayer) {
+      let player = this.state.players[currentPlayer];
+      let selectedCards = this.state[`players:${player.name}:selectedCards`] || [];
       return (
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
+            {/* <img src={logo} className="App-logo" alt="logo" /> */}
+            <h1 className="App-title">Monopoly Deal</h1>
           </header>
           <div style={{textAlign:'left', margin: '32px'}}>
-            <form onSubmit={this.addPlayer}>
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" />
-              <input type="submit" value="Submit" />
-            </form>
-            <br></br>
-            <button onClick={this.startGame}>Start game</button>
+            <h2>
+              {currentPlayer}
+              {currentPlayer === this.state.currentPlayer ? <span> - it's your turn</span> : <span></span>}
+            </h2>
+            <p>
+              {Object.keys(this.state.players).map((playerName, i) => {
+                if (i !== 0) {
+                  return (
+                    <span key={i}> | <a href="#">{playerName}</a></span>
+                  )
+                }
+                return <span key={i}>Players: <a href="#">{playerName}</a></span>
+              })}
+            </p>
             {this.state.started ?
               <div>
-                <p>{this.state.currentPlayer} it's your turn</p>
-                <pre>{JSON.stringify({
-                  hand: this.state.players[this.state.currentPlayer].hand.map((c) => { return cards[c] })
-                }, null, 2)}
-                </pre>
+                <h2>Your hand:</h2>
+                <div className='cards'>
+                  {player && player.hand && player.hand.map((cardId, i) => {
+                    let card = cards[cardId]
+                    let className = ''
+                    if ( card.group || card.groups ) {
+                      className = card.group || card.groups && card.groups.join('-')
+                    } else if ( card.type === 'money' ) {
+                      className = 'money-' + card.value
+                    }
+                    if ( className === 'utility' || card.type === 'action' ) {
+                      className = card.name.split(' ').join('-').toLowerCase()
+                    }
+                    if (selectedCards.includes(cardId)) {
+                      className += ' selected'
+                    }
+                    return (
+                      <div className={'card ' + className} key={i} onClick={this.toggleSelected(card)}>
+                        <p>{card.value}</p>
+                        <p>{card.name || card.type}</p>
+                      </div>
+                    )
+                  })}
+                </div>
+                <h2>Your properties:</h2>
+                {player && player.properties.length === 0 ? <p>You have no properties.</p> : <span></span>}
+                <div className='cards'>
+                  {player && player.hand && player.properties.map((cardId, i) => {
+                    let card = cards[cardId]
+                    let className = ''
+                    if ( card.group || card.groups ) {
+                      className = card.group || card.groups && card.groups.join('-')
+                    } else if ( card.type === 'money' ) {
+                      className = 'money-' + card.value
+                    }
+                    if ( className === 'utility' || card.type === 'action' ) {
+                      className = card.name.split(' ').join('-').toLowerCase()
+                    }
+                    return <div className={'card ' + className} key={i}>{card.name || card.type}</div>
+                  })}
+                </div>
+                <h2>Your bank: $0</h2>
               </div>
             :
-              <h1>Not Started</h1>
+              <button onClick={this.startGame}>Start game</button>
             }
-            <pre>{JSON.stringify(this.state, null, 2)}</pre>
+            {/* <pre>{JSON.stringify(this.state, null, 2)}</pre> */}
           </div>
         </div>
       );
@@ -64,8 +126,8 @@ class App extends Component {
       return (
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
+            {/* <img src={logo} className="App-logo" alt="logo" /> */}
+            <h1 className="App-title">Monopoly Deal</h1>
           </header>
           <div style={{textAlign:'left', margin: '32px'}}>
             <form onSubmit={this.addPlayer}>

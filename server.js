@@ -18,6 +18,7 @@ io.on('connection', function(socket) {
     store.dispatch(action);
     io.emit('data', store.getState());
   });
+  io.emit('data', store.getState());
 });
 
 http.listen(process.env.PORT || 8080);

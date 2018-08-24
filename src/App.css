@@ -1,3 +1,98 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+  text-align: center;
+  margin: 0;
+  padding: 8px;
+}
+
+
+.cards {
+  list-style: none;
+  display: flex;
+  padding: 8px;
+  overflow-x: scroll;
+}
+
+.card {
+  border: 1px solid;
+  width: 50px;
+  min-width: 50px;
+  height: 75px;
+  margin-right: 16px;
+  font-size: 9px;
+  text-align: center;
+  justify-content: center;
+}
+
+.selected {
+  outline: 3px blue solid;
+  outline-offset: 3px;
+}
+
+.pink {
+  background: linear-gradient(180deg, pink 20%, white 0%);
+}
+
+.lightblue {
+  background: linear-gradient(180deg, lightblue 20%, white 0%);
+}
+
+.orange {
+  background: linear-gradient(180deg, orange 20%, white 0%);
+}
+
+.green {
+  background: linear-gradient(180deg, green 20%, white 0%);
+}
+
+.yellow {
+  background: linear-gradient(180deg, yellow 20%, white 0%);
+}
+
+.red {
+  background: linear-gradient(180deg, red 20%, white 0%);
+}
+
+.darkblue {
+  background: linear-gradient(180deg, darkblue 20%, white 0%);
+}
+
+.brown-lightblue-pink-orange-red-yellow-green-darkblue-utility-station {
+  background: linear-gradient(180deg, brown 10%, lightblue 20%, pink 30%, orange 40%, red 50%, yellow 60%, green 70%, blue 80%, black 90%, white 100%);
+}
+
+.pink-orange {
+  background: linear-gradient(pink, pink 20%, white 20%, white 80%, orange 80%, orange 100%);
+}
+
+.red-yellow {
+  background: linear-gradient(red, red 20%, white 20%, white 80%, yellow 80%, yellow 100%);
+}
+
+.money-2:after: {
+  text: 'foo'
+}
+
+.deal-breaker {
+  background-color: lavender;
+}
+
+.double-the-rent, .pass-go {
+  background-color: beige;
+}
+
+.forced-deal, .house {
+  background-color: lightgreen;
+}
+
+.just-say-no {
+  background-color: lightblue;
+}
+
+
 .App {
   text-align: center;
 }

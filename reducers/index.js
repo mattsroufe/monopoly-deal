@@ -27,7 +27,7 @@ const initialState = {
 
 const monopolyDeal = (state = initialState, action) => {
   let players;
-
+  console.log(action)
   switch (action.type) {
     case 'ADD_PLAYER':
       players = Object.assign({}, state.players, {
@@ -56,6 +56,11 @@ const monopolyDeal = (state = initialState, action) => {
         turnOrder: playerNames,
         players,
         deck
+      });
+    case 'TOGGLE_SELECTED':
+      let attr = `players:${action.player}:selectedCards`;
+      return Object.assign({}, state, {
+        [attr]: (state[attr] || []).concat([action.cardId])
       });
     default:
       return state
