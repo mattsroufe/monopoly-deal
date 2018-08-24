@@ -60,7 +60,7 @@ class App extends Component {
               {currentPlayer === this.state.currentPlayer ? <span> - it's your turn</span> : <span></span>}
             </h2>
             <p>
-              {Object.keys(this.state.players).map((playerName, i) => {
+              {this.state.players.map((playerName, i) => {
                 if (i !== 0) {
                   return (
                     <span key={i}> | <a href="#">{playerName}</a></span>

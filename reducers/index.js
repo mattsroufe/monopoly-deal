@@ -49,7 +49,6 @@ const monopolyDeal = (state = initialState, action) => {
       return Object.assign({}, state, {
         started: true,
         currentPlayer,
-        turnOrder: playerNames,
         deck
       }, playerHands);
     case 'TOGGLE_SELECTED':
