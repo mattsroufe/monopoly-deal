@@ -21,7 +21,7 @@ const shuffle = (array) => {
 
 const initialState = {
   started: false,
-  players: {},
+  players: [],
   deck: shuffle(Object.keys(cards))
 };
 
@@ -30,38 +30,38 @@ const monopolyDeal = (state = initialState, action) => {
   console.log(action)
   switch (action.type) {
     case 'ADD_PLAYER':
-      players = Object.assign({}, state.players, {
-        [action.name]: {
-          name: action.name,
-          bank: [],
-          hand: [],
-          properties: []
-        }
+      return Object.assign({}, state, {
+        players: (state.players || []).concat([action.name]),
+        [`players:${action.name}:hand`]: [],
+        [`players:${action.name}:properties`]: [],
+        [`players:${action.name}:bank`]: [],
+        [`players:${action.name}:selectedCards`]: [],
       });
-      return Object.assign({}, state, {players});
     case 'START_GAME':
       let deck = state.deck.slice(0)
-      let playerNames = Object.keys(state.players)
+      let playerNames = state.players
       let currentPlayer = playerNames[0]
-      players = {};
+      let playerHands = {}
       playerNames.forEach((name, i) => {
         const numToTake = i == 0 ? 7 : 5
-        players[name] = Object.assign({}, state.players[name], {
-          hand: deck.splice(Math.max(deck.length - numToTake))
-        })
+        playerHands[`players:${name}:hand`] = deck.splice(Math.max(deck.length - numToTake))
       })
       return Object.assign({}, state, {
         started: true,
         currentPlayer,
         turnOrder: playerNames,
-        players,
         deck
-      });
+      }, playerHands);
     case 'TOGGLE_SELECTED':
       let attr = `players:${action.player}:selectedCards`;
-      return Object.assign({}, state, {
-        [attr]: (state[attr] || []).concat([action.cardId])
-      });
+      let selectedCards = state[attr] || []
+      let newState
+      if (selectedCards.includes(action.cardId)) {
+        newState = selectedCards.filter(cardId => cardId !== action.cardId)
+      } else {
+        newState = selectedCards.concat([action.cardId])
+      }
+      return Object.assign({}, state, {[attr]: newState});
     default:
       return state
   }

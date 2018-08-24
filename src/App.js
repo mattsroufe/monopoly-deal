@@ -47,8 +47,7 @@ class App extends Component {
 
   render() {
     if (currentPlayer) {
-      let player = this.state.players[currentPlayer];
-      let selectedCards = this.state[`players:${player.name}:selectedCards`] || [];
+      let selectedCards = this.state[`players:${currentPlayer}:selectedCards`] || [];
       return (
         <div className="App">
           <header className="App-header">
@@ -74,7 +73,7 @@ class App extends Component {
               <div>
                 <h2>Your hand:</h2>
                 <div className='cards'>
-                  {player && player.hand && player.hand.map((cardId, i) => {
+                  {this.state[`players:${currentPlayer}:hand`].map((cardId, i) => {
                     let card = cards[cardId]
                     let className = ''
                     if ( card.group || card.groups ) {
@@ -97,9 +96,9 @@ class App extends Component {
                   })}
                 </div>
                 <h2>Your properties:</h2>
-                {player && player.properties.length === 0 ? <p>You have no properties.</p> : <span></span>}
+                {this.state[`players:${currentPlayer}:properties`].length === 0 ? <p>You have no properties.</p> : <span></span>}
                 <div className='cards'>
-                  {player && player.hand && player.properties.map((cardId, i) => {
+                  {this.state[`players:${currentPlayer}:properties`].map((cardId, i) => {
                     let card = cards[cardId]
                     let className = ''
                     if ( card.group || card.groups ) {
