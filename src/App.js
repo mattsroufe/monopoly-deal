@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import socketIOClient from "socket.io-client";
-const socket = socketIOClient("http://localhost:3000");
+import openSocket from "socket.io-client";
+const socket = openSocket("http://localhost:3000");
 let cards;
 let currentPlayer;
 
@@ -68,7 +68,7 @@ class App extends Component {
             <h2>
               {currentPlayer}
               {currentPlayer === this.state.currentPlayer ? <span className="your-turn">it's your turn</span> : <span></span>}
-              {currentPlayer === this.state.currentPlayer ? <p className="turns-remaining">3 turns remaining</p> : <span></span>}
+              {currentPlayer === this.state.currentPlayer ? <p className="turns-remaining">{this.state[`players:${currentPlayer}:movesRemaining`]} moves remaining</p> : <span></span>}
             </h2>
             {this.state.started ?
               <div>
@@ -77,8 +77,8 @@ class App extends Component {
                   {this.state[`players:${currentPlayer}:hand`].map((cardId, i) => {
                     let card = cards[cardId]
                     let className = ''
-                    if ( card.group || card.groups ) {
-                      className = card.group || card.groups && card.groups.join('-')
+                    if ( card.groups ) {
+                      className = card.groups.join('-')
                     } else if ( card.type === 'money' ) {
                       className = 'money-' + card.value
                     }

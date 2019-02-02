@@ -36,6 +36,8 @@ const monopolyDeal = (state = initialState, action) => {
         [`players:${action.name}:properties`]: [],
         [`players:${action.name}:bank`]: [],
         [`players:${action.name}:selectedCards`]: [],
+        [`players:${action.name}:moveOptions`]: [],
+        [`players:${action.name}:movesRemaining`]: 0
       });
     case 'START_GAME':
       let deck = state.deck.slice(0)
@@ -49,7 +51,8 @@ const monopolyDeal = (state = initialState, action) => {
       return Object.assign({}, state, {
         started: true,
         currentPlayer,
-        deck
+        deck,
+        [`players:${currentPlayer}:movesRemaining`]: 3
       }, playerHands);
     case 'TOGGLE_SELECTED':
       let attr = `players:${action.player}:selectedCards`;
@@ -60,7 +63,10 @@ const monopolyDeal = (state = initialState, action) => {
       } else {
         newState = selectedCards.concat([action.cardId])
       }
-      return Object.assign({}, state, {[attr]: newState});
+      return Object.assign({}, state, {
+        [attr]: newState,
+        [`players:${action.player}:moveOptions`]: ['addToBank'],
+      });
     default:
       return state
   }
