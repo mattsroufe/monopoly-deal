@@ -20,6 +20,7 @@ const shuffle = (array) => {
 }
 
 const initialState = {
+  currentPlayer: null,
   started: false,
   players: [],
   deck: shuffle(Object.keys(cards))
@@ -67,6 +68,8 @@ const monopolyDeal = (state = initialState, action) => {
         [attr]: newState,
         [`players:${action.player}:moveOptions`]: ['addToBank'],
       });
+    case 'RESET_GAME':
+      return initialState
     default:
       return state
   }

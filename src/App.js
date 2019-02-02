@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import openSocket from "socket.io-client";
-const socket = openSocket("http://localhost:3000");
+const socket = openSocket("http://localhost:8080");
 let cards;
 let currentPlayer;
 
@@ -29,12 +29,11 @@ class App extends Component {
 
   toggleSelected(card) {
     return (event) => {
-      let action = {
+      socket.emit('action', {
         type: 'TOGGLE_SELECTED',
         player: currentPlayer,
         cardId: card.id
-      };
-      socket.emit('action', action);
+      });
       event.preventDefault();
     }
   }
@@ -42,7 +41,13 @@ class App extends Component {
   startGame() {
     socket.emit('action', {
       type: 'START_GAME'
-    });
+    })
+  }
+
+  resetGame() {
+    socket.emit('action', {
+      type: 'RESET_GAME'
+    })
   }
 
   render() {
@@ -59,11 +64,12 @@ class App extends Component {
               {this.state.players.map((playerName, i) => {
                 if (i !== 0) {
                   return (
-                    <span key={i}> | <a href="#">{playerName}</a></span>
+                    <span key={i}> | <button>{playerName}</button></span>
                   )
                 }
-                return <span key={i}>Players: <a href="#">{playerName}</a></span>
+                return <span key={i}>Players: <button>{playerName}</button></span>
               })}
+              <button style={{float: 'right'}} onClick={this.resetGame}>reset</button>
             </p>
             <h2>
               {currentPlayer}
