@@ -18,6 +18,10 @@ class App extends Component {
     }.bind(this));
   }
 
+  componentWillUnmount() {
+    socket.disconnect()
+  }
+
   addPlayer(e) {
     e.preventDefault();
     currentPlayer = document.getElementById('name').value;
@@ -102,6 +106,9 @@ class App extends Component {
                     )
                   })}
                 </div>
+                {this.state[`players:${currentPlayer}:moveOptions`].map((opt, i) => {
+                  return <p key={i}>{opt}</p>
+                })}
                 <h2>Your properties:</h2>
                 {this.state[`players:${currentPlayer}:properties`].length === 0 ? <p>You have no properties.</p> : <span></span>}
                 <div className='cards'>

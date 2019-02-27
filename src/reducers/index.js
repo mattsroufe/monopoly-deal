@@ -1,4 +1,6 @@
-const cards = require('../public/cards.json');
+const { moveOptions } = require('./move-options');
+
+const cards = require('./../../public/cards.json');
 
 const shuffle = (array) => {
   let currentIndex = array.length, temporaryValue, randomIndex;
@@ -66,7 +68,7 @@ const monopolyDeal = (state = initialState, action) => {
       }
       return Object.assign({}, state, {
         [attr]: newState,
-        [`players:${action.player}:moveOptions`]: ['addToBank'],
+        [`players:${action.player}:moveOptions`]: moveOptions(selectedCards),
       });
     case 'RESET_GAME':
       return initialState
